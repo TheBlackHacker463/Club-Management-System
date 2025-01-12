@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Fighter</h2>
+<form method="POST" class="form">
+    <input type="text" name="id" placeholder="ID" required>
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="father_name" placeholder="Father's Name" required>
+    <select name="status" required>
+        <option value="Paid">Paid</option>
+        <option value="Not Paid">Not Paid</option>
+    </select>
+    <input type="date" name="registration_date" required>
+    <button type="submit" class="btn">Save</button>
+</form>
+{% endblock %}

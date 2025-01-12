@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit Fighter</h2>
+
+<!-- Search form -->
+<form method="POST" class="form">
+    <input type="text" name="id" placeholder="Search by ID" {% if fighter %} value="{{ fighter[0] }}" {% endif %}>
+    <input type="text" name="name" placeholder="Search by Name" {% if fighter %} value="{{ fighter[1] }}" {% endif %}>
+    <button type="submit" name="search" class="btn">Search</button>
+</form>
+
+{% if fighter %}
+<!-- Form for editing fighter details -->
+<form method="POST" class="form">
+    <input type="hidden" name="id" value="{{ fighter[0] }}">
+    <input type="text" name="name" value="{{ fighter[1] }}" required>
+    <input type="text" name="father_name" value="{{ fighter[2] }}" required>
+    <select name="status" required>
+        <option value="Paid" {% if fighter[3] == "Paid" %} selected {% endif %}>Paid</option>
+        <option value="Not Paid" {% if fighter[3] == "Not Paid" %} selected {% endif %}>Not Paid</option>
+    </select>
+    <input type="date" name="registration_date" value="{{ fighter[4] }}" required>
+
+    <button type="submit" name="update" class="btn">Save</button>
+    <button type="submit" name="delete" class="btn">Delete</button>
+</form>
+{% endif %}
+{% endblock %}

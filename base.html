@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fighter Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Add the logo here -->
+        <img src="{{ url_for('static', filename='logo123.jpg') }}" alt="Fighter Logo" class="logo">
+        
+        <div class="nav">
+            <a href="{{ url_for('add_fighter') }}" class="btn">Add Fighter</a>
+            <a href="{{ url_for('edit_fighter') }}" class="btn">Edit Fighter</a>
+            <a href="{{ url_for('view_fighters') }}" class="btn">View Fighters</a>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

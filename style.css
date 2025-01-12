@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* White background */
+    text-align: center;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.logo {
+    width: 350px; /* Increased size to 350px */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.nav {
+    margin: 20px 0;
+}
+
+.nav .btn {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px; /* Egg shape */
+    margin: 5px;
+}
+
+.nav .btn:hover {
+    background-color: #45a049;
+}
+
+.flash-messages {
+    margin: 20px 0;
+}
+
+.flash {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.flash.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.flash.error {
+    background-color: #f44336;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px; /* Egg shape */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

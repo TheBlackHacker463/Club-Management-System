@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>View Fighters</h2>
+
+<!-- Search and filter form -->
+<form method="POST" class="form" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px;">
+    <input type="text" name="search" placeholder="Search by Name or ID" 
+           style="padding: 5px 15px; font-size: 14px; height: 38px; border: 1px solid #4CAF50; box-sizing: border-box;">
+    <select name="status" style="width: 150px; padding: 5px; height: 38px; text-align: center; text-align-last: center; border: 1px solid #4CAF50; box-sizing: border-box;">
+        <option value="All">All</option>
+        <option value="Paid">Paid</option>
+        <option value="Not Paid">Not Paid</option>
+    </select>
+    <button type="submit" class="btn" 
+            style="padding: 5px 15px; font-size: 14px; height: 38px; background-color: #4CAF50; color: white; border: none;">
+        Filter
+    </button>
+</form>
+
+<!-- Fighters Table -->
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; font-size: 16px; margin-top: 20px; border-color: #4CAF50;">
+    <thead>
+        <tr style="background-color: #4CAF50; color: white; border-bottom: 2px solid #4CAF50;">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Father's Name</th>
+            <th>Status</th>
+            <th>Registration Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fighter in fighters %}
+        <tr style="background-color: #f1f1f1; border-bottom: 1px solid #4CAF50;">
+            <td>{{ fighter[0] }}</td>
+            <td>{{ fighter[1] }}</td>
+            <td>{{ fighter[2] }}</td>
+            <td>{{ fighter[3] }}</td>
+            <td>{{ fighter[4] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
